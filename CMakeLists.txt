@@ -1,17 +1,11 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.25)
+
+project(GDHSupportMod VERSION 1.0.0)
+
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
-set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-project(GDHSupportMod VERSION 0.1.0)
+setup_geode_mod(GDHSupportMod)
 
-file(GLOB SOURCES src/*.cpp)
-add_library(${PROJECT_NAME} SHARED ${SOURCES})
-
-if (NOT DEFINED ENV{GEODE_SDK})
-	message(FATAL_ERROR "Define la variable de entorno GEODE_SDK con la ruta del SDK de Geode")
-endif()
-add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
-
-setup_geode_mod(${PROJECT_NAME})
+add_library(GDHSupportMod SHARED src/main.cpp)
+target_link_libraries(GDHSupportMod PUBLIC Geode)
