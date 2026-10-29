@@ -1,0 +1,21 @@
+{
+	"geode": "v4.0.0",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081"
+	},
+	"id": "emilytn.gdh-support-mod",
+	"name": "GDH Support Mod",
+	"version": "v0.1.0",
+	"developer": "EmilYtn",
+	"description": "Exporta niveles a archivos .gdh y genera el verify code.",
+	"tags": ["editor", "utility"],
+	"dependencies": [
+		{
+			"id": "geode.node-ids",
+			"version": "v1.10.0",
+			"importance": "required"
+		}
+	]
+}
