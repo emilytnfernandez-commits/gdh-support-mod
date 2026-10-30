@@ -12,14 +12,18 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Geode SDK
-        uses: geode-sdk/install-geode-sdk@main
-        with:
-          geode: v4.0.0
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
+        id: build
         with:
+          sdk: v4.0.0
           target: Win64
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: geode-mod-win
+          path: ${{ steps.build.outputs.build-output }}
