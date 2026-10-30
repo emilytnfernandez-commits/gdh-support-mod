@@ -1,22 +1,13 @@
 name: Build Geode Mod
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: windows-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Build Mod
-        uses: geode-sdk/build-geode-mod@main
-        with:
-          sdk: v4.0.0
-          target: Win64
+{
+  "geode": "4.0.0",
+  "gd": {
+    "win": "2.2081"
+  },
+  "id": "emilytnfernandez.gdh_support_mod",
+  "name": "GDH Support Mod",
+  "version": "1.0.0",
+  "developer": "emilytnfernandez",
+  "description": "Mod de soporte para Geometry Dash"
+}
