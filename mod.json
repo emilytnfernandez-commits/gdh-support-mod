@@ -1,29 +1,21 @@
-name: Build Geode Mod
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: windows-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Build Mod
-        uses: geode-sdk/build-geode-mod@main
-        id: build
-        with:
-          sdk: v4.0.0
-          target: Win64
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: geode-mod-win
-          path: ${{ steps.build.outputs.build-output }}
+{
+	"geode": "v4.0.0",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081"
+	},
+	"id": "emilytn.gdh-support-mod",
+	"name": "GDH Support Mod",
+	"version": "v0.1.0",
+	"developer": "EmilYtn",
+	"description": "Exporta niveles a archivos .gdh y genera el verify code.",
+	"tags": ["editor", "utility"],
+	"dependencies": [
+		{
+			"id": "geode.node-ids",
+			"version": "v1.10.0",
+			"importance": "required"
+		}
+	]
+}
