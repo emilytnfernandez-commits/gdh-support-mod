@@ -1,5 +1,3 @@
-name: Build Geode Mod
-
 {
   "geode": "4.0.0",
   "gd": {
